@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZOs-kC-sEb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Nature Pictures-->
+        <scene sceneID="rlj-mG-7LN">
+            <objects>
+                <collectionViewController id="dPJ-m8-5wG" customClass="CollectionViewController" customModule="CollectionViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Gch-OA-9jA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="teH-i0-JWf">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="TNv-DF-wkB" customClass="DataItemCell" customModule="CollectionViewDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gqo-3g-kN7">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="Gqo-3g-kN7" firstAttribute="top" secondItem="TNv-DF-wkB" secondAttribute="top" id="Yb6-Uq-sK5"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gqo-3g-kN7" secondAttribute="trailing" id="cfp-nV-vkR"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gqo-3g-kN7" secondAttribute="bottom" id="chK-fg-RqC"/>
+                                    <constraint firstItem="Gqo-3g-kN7" firstAttribute="leading" secondItem="TNv-DF-wkB" secondAttribute="leading" id="iBL-AO-kl8"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataItemImageView" destination="Gqo-3g-kN7" id="RVA-m2-Jea"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionHeader" id="Pgt-g3-Hot" customClass="DataItemHeader" customModule="CollectionViewDemo" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4K6-M4-6fU">
+                                    <rect key="frame" x="8" y="8" width="359" height="34"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="4K6-M4-6fU" secondAttribute="trailing" constant="8" id="9ca-M7-NP5"/>
+                                <constraint firstItem="4K6-M4-6fU" firstAttribute="top" secondItem="Pgt-g3-Hot" secondAttribute="top" constant="8" id="bzz-aR-WYA"/>
+                                <constraint firstItem="4K6-M4-6fU" firstAttribute="leading" secondItem="Pgt-g3-Hot" secondAttribute="leading" constant="8" id="kIZ-se-eop"/>
+                                <constraint firstAttribute="bottom" secondItem="4K6-M4-6fU" secondAttribute="bottom" constant="8" id="rwb-hY-Ye4"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="titleLabel" destination="4K6-M4-6fU" id="Zw8-zD-MJX"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="dPJ-m8-5wG" id="eiA-r6-WR2"/>
+                            <outlet property="delegate" destination="dPJ-m8-5wG" id="kGP-8u-pJW"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Nature Pictures" id="qf2-dz-Wq9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eTb-r3-SWc">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="dPJ-m8-5wG" id="CXg-LX-2ey"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iF2-Tc-VUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="935.20000000000005" y="-120.08995502248877"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="g2l-rh-bVH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZOs-kC-sEb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9r8-kG-0c7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dPJ-m8-5wG" kind="relationship" relationship="rootViewController" id="anJ-67-Nhx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hhu-NM-GZO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4" y="-120.08995502248877"/>
+        </scene>
+    </scenes>
+</document>
